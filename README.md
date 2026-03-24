@@ -1,40 +1,39 @@
-```markdown
 # 🕶️ Loopstudios — Immersive VR Experiences Landing Page
 
 ![Preview](design/preview.jpg)
 
-Адаптивная лендинг-страница для Loopstudios — компании, создающей иммерсивные VR-проекты.  
-Проект для отработки **SASS-архитектуры**, **адаптивной верстки**, **мобильного меню** и **доступности**.
+A responsive landing page for Loopstudios — a company specializing in immersive VR experiences.  
+This project was built to practice **SASS architecture**, **responsive design**, **mobile menu implementation**, and **accessibility**.
 
-[🔗 Демо]() | [📄 Frontend Mentor](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw)
-
----
-
-## ✨ Возможности
-
-- ✅ **Адаптивный дизайн** — mobile-first, десктопная версия с сеткой
-- ✅ **Мобильное меню** — бургер с анимацией, блокировка скролла
-- ✅ **Тёмная тема** — автоматическая через `prefers-color-scheme`
-- ✅ **SASS-архитектура** — модули, миксины, переменные, `@use`/`@forward`
-- ✅ **Доступность** — ARIA-атрибуты, семантическая разметка, фокусы
-- ✅ **Адаптивные изображения** — через `picture` с разными разрешениями
-- ✅ **Псевдоэлементы** — подчёркивание ссылок без смещения лого
-- ✅ **CSS Grid** — сетка карточек с изображениями
+[🔗 Live Demo](https://thought-del.github.io/Loopstudios-Lending/) | [📄 Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw)
 
 ---
 
-## 🛠 Технологии
+## ✨ Features
 
-| Технология | Назначение |
-|------------|------------|
-| **HTML5** | Семантическая разметка, ARIA |
-| **CSS3 / SASS** | Grid, Flexbox, переменные, `clamp()`, миксины |
-| **JavaScript (ES6)** | Мобильное меню, блокировка скролла, клавиатура |
+- ✅ **Responsive design** — mobile-first approach with desktop grid layout
+- ✅ **Mobile menu** — hamburger with smooth animation and scroll lock
+- ✅ **Dark theme** — automatic via `prefers-color-scheme`
+- ✅ **SASS architecture** — modules, mixins, variables, `@use` / `@forward`
+- ✅ **Accessibility** — ARIA attributes, semantic markup, focus states
+- ✅ **Responsive images** — `<picture>` element with different resolutions
+- ✅ **Pseudo-elements** — link underlines without disrupting logo positioning
+- ✅ **CSS Grid** — image card grid layout
+
+---
+
+## 🛠 Technologies
+
+| Technology | Purpose |
+|------------|---------|
+| **HTML5** | Semantic markup, ARIA |
+| **CSS3 / SASS** | Grid, Flexbox, variables, `clamp()`, mixins |
+| **JavaScript (ES6)** | Mobile menu, scroll lock, keyboard handling |
 | **Google Fonts** | Alata (400), Josefin Sans (300) |
 
 ---
 
-## 🧩 Структура проекта
+## 🧩 Project Structure
 
 ```
 loopstudios-landing-page/
@@ -74,18 +73,18 @@ loopstudios-landing-page/
 
 ---
 
-## 🧠 SASS-архитектура
+## 🧠 SASS Architecture
 
-### Миксины
+### Mixins
 ```scss
 @mixin font-one($font-size, $color, $fontW) { ... }
 @mixin font-two($font-size, $color, $fontW) { ... }
 @mixin layoutFlexBase($gap) { ... }
-@mixin layoutFLex { ... }
+@mixin layoutFlex { ... }
 @mixin desktopBreakpoint { ... }
 ```
 
-### Переменные
+### Variables
 ```scss
 $color-white: hsl(0, 0%, 100%);
 $color-black: hsl(0, 0%, 0%);
@@ -93,7 +92,7 @@ $color-dark-grey: hsl(0, 0%, 55%);
 $color-very-dark-grey: hsl(0, 0%, 41%);
 ```
 
-### Структура импортов
+### Import Structure
 ```scss
 // main.scss
 @use "abstracts" as *;
@@ -105,18 +104,18 @@ $color-very-dark-grey: hsl(0, 0%, 41%);
 
 ---
 
-## 📱 Адаптивность
+## 📱 Responsive Design
 
-| Устройство | Ширина | Особенности |
-|------------|--------|-------------|
-| Mobile | < 1024px | Вертикальная сетка, мобильное меню |
-| Desktop | ≥ 1024px | Горизонтальная сетка, десктопное меню |
+| Device | Width | Layout |
+|--------|-------|--------|
+| Mobile | < 1024px | Stacked layout, mobile hamburger menu |
+| Desktop | ≥ 1024px | Horizontal grid layout, desktop navigation |
 
 ---
 
-## 🎨 Тёмная тема
+## 🎨 Dark Theme
 
-Автоматически подстраивается под системные настройки:
+Automatically adapts to system preferences:
 
 ```scss
 @media (prefers-color-scheme: dark) {
@@ -131,31 +130,30 @@ $color-very-dark-grey: hsl(0, 0%, 41%);
 
 ---
 
-## ⌨️ Клавиатурная навигация
+## ⌨️ Keyboard Navigation
 
-| Клавиша | Действие |
-|---------|----------|
-| `Escape` | Закрыть мобильное меню |
+| Key | Action |
+|-----|--------|
+| `Escape` | Close mobile menu |
 
 ---
 
-## 🧪 Тестирование
+## 🧪 Testing
 
 - [x] Chrome, Firefox, Safari
-- [x] Мобильные устройства (Android, iOS)
-- [x] Клавиатурная навигация
-- [x] Скринридер (NVDA, VoiceOver)
-- [x] Светлая и тёмная темы
-- [x] Разные разрешения экрана
+- [x] Mobile devices (Android, iOS)
+- [x] Keyboard navigation
+- [x] Screen readers (NVDA, VoiceOver)
+- [x] Light and dark themes
+- [x] Various screen resolutions
 
 ---
 
-## 💬 Контакты
+## 💬 Contact
 
 - GitHub: [@Thought-del](https://github.com/Thought-del)
 - Frontend Mentor: [@Thought-del](https://www.frontendmentor.io/profile/Thought-del)
 
 ---
 
-**⭐ Если проект понравился — поставь звезду!**
-```
+**⭐ If you like this project — please give it a star!**
