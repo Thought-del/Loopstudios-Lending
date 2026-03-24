@@ -342,7 +342,7 @@ header {
   min-height: 90vh;
   margin-bottom: 4rem;
   /* Hero-images */
-  background-image: url("/images/mobile/image-hero.jpg");
+  background-image: url("../images/mobile/image-hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -427,7 +427,7 @@ header .hero-title {
 }
 @media (min-width: 64em) {
   header {
-    background-image: url("/images/desktop/image-hero.jpg");
+    background-image: url("../images/desktop/image-hero.jpg");
     margin-bottom: 0;
   }
 }
