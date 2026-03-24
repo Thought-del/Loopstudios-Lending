@@ -1,0 +1,96 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+header {
+    position: relative;
+    min-height: 90vh;
+    margin-bottom: $space-8;
+
+    /* Hero-images */
+    background-image: url('/images/mobile/image-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .header-container {
+        @include layoutFLex;
+
+        position: relative;
+        z-index: 2;
+        padding: $space-6;
+
+        > img {
+            width: clamp(10rem, 7.1109rem + 12.3267vw, 15rem);
+            height: auto;
+        }
+
+        .desktop-nav {
+            display: none;
+
+            @include desktopBreakpoint {
+                display: block;
+                
+                .nav-list {
+                    @include font-one($font-size-xl, $color-white);
+
+                    display: flex;
+                    gap: $space-6;
+
+                    li a {
+                        position: relative;
+                        padding-bottom: $space-4;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 2px;
+                            background-color: $color-white;
+                            transition: width 0.3s ease;
+                        }
+
+                        &:hover:after {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-btn {
+            @include desktopBreakpoint {
+                display: none;
+            }
+        }
+
+        @include desktopBreakpoint {
+            padding: $space-8 10rem;
+        }
+    }
+
+    .hero-title {
+        @include font-two(clamp(1.25rem, 0.8166rem + 1.849vw, 2rem));
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(85%, 550px);
+        z-index: 2;
+        border: 2px solid $color-white;
+        padding: $space-3 $space-5;
+
+        @include desktopBreakpoint {
+            top: 60%;
+            left: 25%;
+        }
+    }
+
+    @include desktopBreakpoint {
+        background-image: url('/images/desktop/image-hero.jpg');
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-black;
+    width: 100%;
+    height: 100%;
+    padding: $space-6 $space-5;
+    z-index: 100;
+
+    .menu-header {
+        @include layoutFLex;
+
+        margin-bottom: 6rem;
+
+        > img {
+            width: 10rem;
+            height: auto;
+        }
+    }
+
+    .mobile-nav-list {
+        @include font-one($font-size-xl, $fontW: $font-weight-light);
+
+        display: flex;
+        flex-direction: column;
+        gap: $space-3;
+    }
+}

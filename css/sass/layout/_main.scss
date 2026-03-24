@@ -1,0 +1,144 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    @include layoutFlexBase(clamp(4rem, -0.6225rem + 19.7227vw, 12rem));
+
+    padding:
+            clamp(2rem, -2.6225rem + 19.7227vw, 10rem)
+            clamp(2rem, -3.7781rem + 24.6533vw, 12rem);
+}
+
+.interactive {
+    @include layoutFlexBase;
+
+    .interactive-content {
+        @include font-one;
+
+        text-align: center;
+        padding: 
+                clamp(0.75rem, -1.1279rem + 8.0123vw, 4rem)
+                clamp(0.75rem, -1.7057rem + 10.4777vw, 5rem);
+
+        #interactive-title {
+            @include font-two(clamp(2rem, 1.7111rem + 1.2327vw, 2.5rem), $color-black);
+
+            margin-bottom: $space-4;
+        }
+
+        @include desktopBreakpoint {
+            position: relative;
+            width: min(90%, 600px);
+            text-align: start;
+            background-color: $color-white;
+            margin-top: 10rem;
+            margin-left: -10rem;
+            z-index: 2;
+
+            #interactive-title {
+                text-align: center;
+            }
+        }
+    }
+
+    @include desktopBreakpoint {
+        flex-direction: row;
+        gap: 0;
+    }
+}
+
+.creations {
+    position: relative;
+    text-align: center;
+
+    #creations-title {
+        @include font-two(clamp(2rem, 1.7111rem + 1.2327vw, 2.5rem), $color-black);
+
+        margin-bottom: clamp(2rem, 0.2666rem + 7.396vw, 5rem);
+
+        @include desktopBreakpoint {
+            text-align: start;
+        }
+    }
+
+    .creations-grid {
+        @include layoutFlexBase;
+
+        margin-bottom: $space-6;
+
+        div:not(.span-container) {
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+
+        .span-container {
+            @include font-two($font-size-xl);
+
+            text-align: start;
+            width: 5rem;
+            position: absolute;
+            top: 40%;
+            left: 5%;
+        }
+
+        #more-width {
+            width: 10rem;
+        }
+
+        @include desktopBreakpoint {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: $space-5;
+
+            .span-container {
+                top: 82%;
+                left: 10%;
+            }
+        }
+    }
+
+    .btn {
+        @include font-one($color: $color-black);
+
+        width: 10rem;
+        border: 2px solid $color-black;
+        text-align: center;
+        letter-spacing: 4px;
+        padding: $space-2;
+        margin-bottom: $space-8;
+
+        &:hover {
+            background-color: $color-black;
+            color: $color-white;
+            border-color: transparent;
+        }
+
+        @include desktopBreakpoint {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-bottom: 0;
+        }
+    }
+}

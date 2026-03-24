@@ -1,0 +1,78 @@
+@use "../abstracts/variables" as *;
+
+@media (prefers-color-scheme: dark) {
+    $bg-body: #0a0a0a;
+    $bg-card: #111111;
+    $text-primary: #ffffff;
+    $text-secondary: #cccccc;
+    $border-color: #333333;
+
+    body {
+        background-color: $bg-body;
+        color: $text-primary;
+    }
+
+    header {
+        .hero-title {
+            border-color: $border-color;
+        }
+    }
+
+    .interactive-content {
+        background-color: $bg-card;
+        
+        #interactive-title {
+            color: $text-primary;
+        }
+        
+        p {
+            color: $text-secondary;
+        }
+    }
+
+    .creations {
+        #creations-title {
+            color: $text-primary;
+        }
+
+        .btn {
+        border-color: $text-primary;
+        color: $text-primary;
+        
+            &:hover {
+                background-color: $bg-card;
+                color: $text-primary;
+            }
+        }
+    }
+
+    .creations-grid {
+        .span-container {
+            color: $text-primary;
+        }
+        
+        div:not(.span-container)::after {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    footer {
+        background-color: $bg-card;
+        
+        .footer-nav-list a {
+            color: $text-secondary;
+            
+            &:hover {
+                color: $text-primary;
+            }
+        }
+        
+        .social-link img {
+            filter: brightness(0.8) invert(1);
+        }
+        
+        p {
+            color: $text-secondary;
+        }
+    }
+}
